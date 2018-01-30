@@ -1,0 +1,13 @@
+:root {
+  --color-primary: #431123;
+  --color-secondary: #1A2030;
+  --color-accent: #C1B970;
+  --color-neutral-grey: #E0DEDE;
+
+  --font-primary: 'Quicksand', sans-serif;
+  --font-secondary: 'Abhaya Libre', serif;
+}
+
+html {
+  font-family: var(--font-primary);
+}
