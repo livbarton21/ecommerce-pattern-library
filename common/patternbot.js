@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519661532402
+ * @version 1519663320672
  */
-const patternManifest_1519661532402 = {
+const patternManifest_1519663320671 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -530,7 +530,8 @@ const patternManifest_1519661532402 = {
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons"
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards"
     ],
     "pages": []
   },
@@ -563,6 +564,41 @@ const patternManifest_1519661532402 = {
           "localPath": "patterns/buttons/buttons.css"
         }
       ]
+    },
+    {
+      "name": "cards",
+      "namePretty": "Cards",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards",
+      "html": [
+        {
+          "name": "basic-card",
+          "namePretty": "Basic card",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/basic-card.html",
+          "localPath": "patterns/cards/basic-card.html"
+        },
+        {
+          "name": "icon-card",
+          "namePretty": "Icon card",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/icon-card.html",
+          "localPath": "patterns/cards/icon-card.html"
+        }
+      ],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/README.md",
+          "localPath": "patterns/cards/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "cards",
+          "namePretty": "Cards",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/cards.css",
+          "localPath": "patterns/cards/cards.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -585,5 +621,5 @@ const patternManifest_1519661532402 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519661532402);
+patternBotIncludes(patternManifest_1519663320671);
 }());
