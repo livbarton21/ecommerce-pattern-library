@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519663320672
+ * @version 1519689351328
  */
-const patternManifest_1519663320671 = {
+const patternManifest_1519689351328 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -495,8 +495,9 @@ const patternManifest_1519663320671 = {
     },
     "readme": {
       "attributes": {
-        "fontURL": "https://fonts.googleapis.com/css?family=Quicksand",
-        "fontUrl": "https://fonts.googleapis.com/css?family=Quicksand",
+        "name": "Treasure Hunt",
+        "fontURL": "https://fonts.googleapis.com/css?family=Abhaya+Libre",
+        "fontUrl": "https://fonts.googleapis.com/css?family=Abhaya+Libre",
         "backgroundColour": "#fff",
         "interfaceColours": {
           "primary": 0,
@@ -621,5 +622,5 @@ const patternManifest_1519663320671 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519663320671);
+patternBotIncludes(patternManifest_1519689351328);
 }());
