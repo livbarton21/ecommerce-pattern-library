@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519751176546
+ * @version 1519751981580
  */
-const patternManifest_1519751176546 = {
+const patternManifest_1519751981580 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -539,6 +539,7 @@ const patternManifest_1519751176546 = {
       "size64Local": "logo-64.svg"
     },
     "patterns": [
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners",
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons",
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards",
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms"
@@ -546,6 +547,28 @@ const patternManifest_1519751176546 = {
     "pages": []
   },
   "userPatterns": [
+    {
+      "name": "banners",
+      "namePretty": "Banners",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners",
+      "html": [
+        {
+          "name": "banner-one",
+          "namePretty": "Banner one",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners/banner-one.html",
+          "localPath": "patterns/banners/banner-one.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "banners",
+          "namePretty": "Banners",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners/banners.css",
+          "localPath": "patterns/banners/banners.css"
+        }
+      ]
+    },
     {
       "name": "buttons",
       "namePretty": "Buttons",
@@ -659,5 +682,5 @@ const patternManifest_1519751176546 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519751176546);
+patternBotIncludes(patternManifest_1519751981580);
 }());

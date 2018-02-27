@@ -1,0 +1,7 @@
+.banner-one {
+  color: #fff;
+  position: relative;
+  text-align: center;
+
+  background: var(--color-neutral-grey);
+}
