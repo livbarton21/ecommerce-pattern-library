@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519736604169
+ * @version 1519738982440
  */
-const patternManifest_1519736604169 = {
+const patternManifest_1519738982440 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -540,7 +540,8 @@ const patternManifest_1519736604169 = {
     },
     "patterns": [
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons",
-      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards"
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms"
     ],
     "pages": []
   },
@@ -608,6 +609,34 @@ const patternManifest_1519736604169 = {
           "localPath": "patterns/cards/cards.css"
         }
       ]
+    },
+    {
+      "name": "forms",
+      "namePretty": "Forms",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms",
+      "html": [
+        {
+          "name": "form",
+          "namePretty": "Form",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/form.html",
+          "localPath": "patterns/forms/form.html"
+        },
+        {
+          "name": "thanks",
+          "namePretty": "Thanks",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/thanks.html",
+          "localPath": "patterns/forms/thanks.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "forms",
+          "namePretty": "Forms",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/forms.css",
+          "localPath": "patterns/forms/forms.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -630,5 +659,5 @@ const patternManifest_1519736604169 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519736604169);
+patternBotIncludes(patternManifest_1519738982440);
 }());
