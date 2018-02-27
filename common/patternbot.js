@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519691913444
+ * @version 1519736604169
  */
-const patternManifest_1519691913444 = {
+const patternManifest_1519736604169 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -505,6 +505,14 @@ const patternManifest_1519691913444 = {
         }
       }
     },
+    "icons": [
+      "cart16234",
+      "lightbulb16234",
+      "check16234",
+      "profile16234",
+      "star16234",
+      "truck16234"
+    ],
     "interfaceColours": {
       "primary": 0,
       "opposite": 255
@@ -518,7 +526,7 @@ const patternManifest_1519691913444 = {
       "theme": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/common/theme.css"
     },
     "imagesParsable": {
-      "icons": false
+      "icons": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/images/icons.svg"
     },
     "logos": {
       "sizeLarge": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/images/logo-256.svg",
@@ -622,5 +630,5 @@ const patternManifest_1519691913444 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519691913444);
+patternBotIncludes(patternManifest_1519736604169);
 }());
