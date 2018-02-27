@@ -36,3 +36,8 @@ dd {
   color: var(--color-secondary);
   font-family: var(--font-primary);
 }
+
+blockquote {
+  font-family: var(--font-primary);
+  color: var(--color-accent);
+}

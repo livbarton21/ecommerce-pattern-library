@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519689351328
+ * @version 1519691913444
  */
-const patternManifest_1519689351328 = {
+const patternManifest_1519691913444 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -572,10 +572,10 @@ const patternManifest_1519689351328 = {
       "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards",
       "html": [
         {
-          "name": "basic-card",
-          "namePretty": "Basic card",
-          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/basic-card.html",
-          "localPath": "patterns/cards/basic-card.html"
+          "name": "basic-cards",
+          "namePretty": "Basic cards",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/basic-cards.html",
+          "localPath": "patterns/cards/basic-cards.html"
         },
         {
           "name": "icon-card",
@@ -622,5 +622,5 @@ const patternManifest_1519689351328 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519689351328);
+patternBotIncludes(patternManifest_1519691913444);
 }());
