@@ -41,3 +41,7 @@ blockquote {
   font-family: var(--font-primary);
   color: var(--color-accent);
 }
+
+mark {
+  background-color: var(--color-accent);
+}

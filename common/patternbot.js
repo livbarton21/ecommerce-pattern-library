@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519751981580
+ * @version 1519760781855
  */
-const patternManifest_1519751981580 = {
+const patternManifest_1519760781855 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -613,7 +613,8 @@ const patternManifest_1519751981580 = {
           "name": "icon-card",
           "namePretty": "Icon card",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/icon-card.html",
-          "localPath": "patterns/cards/icon-card.html"
+          "localPath": "patterns/cards/icon-card.html",
+          "readme": {}
         }
       ],
       "md": [
@@ -682,5 +683,5 @@ const patternManifest_1519751981580 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519751981580);
+patternBotIncludes(patternManifest_1519760781855);
 }());

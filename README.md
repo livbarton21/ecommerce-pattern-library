@@ -11,10 +11,12 @@ fonts:
 
     Use the secondary typeface for headings, buttons, and to highlight important information.
 colors:
-  primary: burgundy
+  primary: The burgundy color is very rich and represents the brand.
 
-  secondary:
+  secondary: The navy is a strong balance but is a lighter alternative to black.
 
-  neutral:
+  neutral: The grey is a minimal neutral color.
+
+  accent: The mustard is a fun pop of color to add to the pages of this website.
 ---
 A company that sells antique and revamped pieces of furniture.
