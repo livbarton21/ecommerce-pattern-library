@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1519760781855
+ * @version 1520944091102
  */
-const patternManifest_1519760781855 = {
+const patternManifest_1520944091102 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -542,7 +542,11 @@ const patternManifest_1519760781855 = {
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners",
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons",
       "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards",
-      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms"
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/footer",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/header",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation",
+      "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections"
     ],
     "pages": []
   },
@@ -635,6 +639,21 @@ const patternManifest_1519760781855 = {
       ]
     },
     {
+      "name": "footer",
+      "namePretty": "Footer",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/footer",
+      "html": [
+        {
+          "name": "footer",
+          "namePretty": "Footer",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/footer/footer.html",
+          "localPath": "patterns/footer/footer.html"
+        }
+      ],
+      "md": [],
+      "css": []
+    },
+    {
       "name": "forms",
       "namePretty": "Forms",
       "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms",
@@ -661,6 +680,58 @@ const patternManifest_1519760781855 = {
           "localPath": "patterns/forms/forms.css"
         }
       ]
+    },
+    {
+      "name": "header",
+      "namePretty": "Header",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/header",
+      "html": [],
+      "md": [],
+      "css": []
+    },
+    {
+      "name": "navigation",
+      "namePretty": "Navigation",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation",
+      "html": [
+        {
+          "name": "nav",
+          "namePretty": "Nav",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation/nav.html",
+          "localPath": "patterns/navigation/nav.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "nav",
+          "namePretty": "Nav",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation/nav.css",
+          "localPath": "patterns/navigation/nav.css"
+        }
+      ]
+    },
+    {
+      "name": "sections",
+      "namePretty": "Sections",
+      "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections",
+      "html": [
+        {
+          "name": "section",
+          "namePretty": "Section",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections/section.html",
+          "localPath": "patterns/sections/section.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "section",
+          "namePretty": "Section",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections/section.css",
+          "localPath": "patterns/sections/section.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -683,5 +754,5 @@ const patternManifest_1519760781855 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519760781855);
+patternBotIncludes(patternManifest_1520944091102);
 }());
