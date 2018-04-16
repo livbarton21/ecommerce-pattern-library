@@ -101,7 +101,6 @@ const patternBotIncludes = function (manifest) {
     for (i = 0; i < t; i++) {
       if (rootMatcher.test(allScripts[i].src)) {
         return allScripts[i].src.split(rootMatcher)[0];
-        break;
       }
     }
   };
@@ -143,7 +142,7 @@ const patternBotIncludes = function (manifest) {
     let patternInfoJson;
     const data = patternElem.innerText.trim();
 
-    if (!data) return {}
+    if (!data) return {};
 
     try {
       patternInfoJson = JSON.parse(data);
@@ -172,9 +171,50 @@ const patternBotIncludes = function (manifest) {
     };
   };
 
+  const correctHrefPaths = function (html) {
+    const hrefSearch = /href\s*=\s*"\.\.\/\.\.\//g;
+    const srcSearch = /src\s*=\s*"\.\.\/\.\.\//g;
+    const urlSearch = /url\((["']*)\.\.\/\.\.\//g;
+
+    return html
+      .replace(hrefSearch, 'href="../')
+      .replace(srcSearch, 'src="../')
+      .replace(urlSearch, 'url($1../')
+    ;
+  };
+
+  const buildAccurateSelectorFromElem = function (elem) {
+    let theSelector = elem.tagName.toLowerCase();
+
+    if (elem.id) theSelector += `#${elem.id}`;
+    if (elem.getAttribute('role')) theSelector += `[role="${elem.getAttribute('role')}"]`;
+    if (elem.classList.length > 0) theSelector += `.${[].join.call(elem.classList, '.')}`;
+
+    theSelector += ':first-of-type';
+
+    return theSelector;
+  };
+
+  /**
+   * This is an ugly mess: Blink does not properly render SVGs when using DOMParser alone.
+   * But, I need DOMParser to determine the correct element to extract.
+   *
+   * I only want to get the first element within the `<body>` tag of the loaded document.
+   * This dumps the whole, messy, HTML document into a temporary `<div>`,
+   * then uses the DOMParser version, of the same element, to create an accurate selector,
+   * then finds that single element in the temporary `<div>` using the selector and returns it.
+   */
   const htmlStringToElem = function (html) {
+    let theSelector = '';
+    const tmpDoc = document.createElement('div');
+    const finalTmpDoc = document.createElement('div');
     const doc = (new DOMParser()).parseFromString(html, 'text/html');
-    return doc.body;
+
+    tmpDoc.innerHTML = html;
+    theSelector = buildAccurateSelectorFromElem(doc.body.firstElementChild);
+    finalTmpDoc.appendChild(tmpDoc.querySelector(theSelector));
+
+    return finalTmpDoc;
   };
 
   const replaceElementValue = function (elem, sel, data) {
@@ -197,7 +237,7 @@ const patternBotIncludes = function (manifest) {
 
     if (!patternDetails.html) return;
 
-    patternOutElem = htmlStringToElem(patternDetails.html);
+    patternOutElem = htmlStringToElem(correctHrefPaths(patternDetails.html));
     patternData = getPatternInfo(patternElem);
 
     Object.keys(patternData).forEach((sel) => {
@@ -234,7 +274,7 @@ const patternBotIncludes = function (manifest) {
   };
 
   const hideLoadingScreen = function () {
-    const allDownloadedInterval = setInterval(() => {
+    let allDownloadedInterval = setInterval(() => {
       if (Object.values(downloadedAssets).includes(false)) return;
 
       clearInterval(allDownloadedInterval);
@@ -272,7 +312,7 @@ const patternBotIncludes = function (manifest) {
           if (resp.status >= 200 && resp.status <= 299) {
             return resp.text();
           } else {
-            console.group('Cannot location pattern');
+            console.group('Cannot locate pattern');
             console.log(resp.url);
             console.log(`Error ${resp.status}: ${resp.statusText}`);
             console.groupEnd();
@@ -348,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1520955372092
+ * @version 1523901708669
  */
-const patternManifest_1520955372092 = {
+const patternManifest_1523901708669 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -503,7 +543,9 @@ const patternManifest_1520955372092 = {
           "primary": 0,
           "opposite": 255
         }
-      }
+      },
+      "bodyRaw": "A company that sells antique and revamped pieces of furniture.\n",
+      "bodyBasic": "A company that sells antique and revamped pieces of furniture."
     },
     "icons": [
       "cart16234",
@@ -559,6 +601,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "banner-one",
           "namePretty": "Banner one",
+          "filename": "banner-one",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners/banner-one.html",
           "localPath": "patterns/banners/banner-one.html"
         }
@@ -568,6 +611,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "banners",
           "namePretty": "Banners",
+          "filename": "banners",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/banners/banners.css",
           "localPath": "patterns/banners/banners.css"
         }
@@ -581,6 +625,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
@@ -589,6 +634,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
@@ -597,6 +643,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
@@ -610,12 +657,14 @@ const patternManifest_1520955372092 = {
         {
           "name": "basic-cards",
           "namePretty": "Basic cards",
+          "filename": "basic-cards",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/basic-cards.html",
           "localPath": "patterns/cards/basic-cards.html"
         },
         {
           "name": "icon-card",
           "namePretty": "Icon card",
+          "filename": "icon-card",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/icon-card.html",
           "localPath": "patterns/cards/icon-card.html",
           "readme": {}
@@ -625,6 +674,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
@@ -633,6 +683,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "cards",
           "namePretty": "Cards",
+          "filename": "cards",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
@@ -646,6 +697,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "footer",
           "namePretty": "Footer",
+          "filename": "footer",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html"
         }
@@ -659,14 +711,23 @@ const patternManifest_1520955372092 = {
       "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms",
       "html": [
         {
+          "name": "feedback",
+          "namePretty": "Feedback",
+          "filename": "1-feedback",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/1-feedback.html",
+          "localPath": "patterns/forms/1-feedback.html"
+        },
+        {
           "name": "form",
           "namePretty": "Form",
+          "filename": "form",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/form.html",
           "localPath": "patterns/forms/form.html"
         },
         {
           "name": "thanks",
           "namePretty": "Thanks",
+          "filename": "thanks",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/thanks.html",
           "localPath": "patterns/forms/thanks.html"
         }
@@ -676,6 +737,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "forms",
           "namePretty": "Forms",
+          "filename": "forms",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
@@ -685,9 +747,25 @@ const patternManifest_1520955372092 = {
       "name": "header",
       "namePretty": "Header",
       "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/header",
-      "html": [],
+      "html": [
+        {
+          "name": "header",
+          "namePretty": "Header",
+          "filename": "header",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/header/header.html",
+          "localPath": "patterns/header/header.html"
+        }
+      ],
       "md": [],
-      "css": []
+      "css": [
+        {
+          "name": "header",
+          "namePretty": "Header",
+          "filename": "header",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/header/header.css",
+          "localPath": "patterns/header/header.css"
+        }
+      ]
     },
     {
       "name": "navigation",
@@ -697,6 +775,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "nav",
           "namePretty": "Nav",
+          "filename": "nav",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation/nav.html",
           "localPath": "patterns/navigation/nav.html"
         }
@@ -706,6 +785,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "nav",
           "namePretty": "Nav",
+          "filename": "nav",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/navigation/nav.css",
           "localPath": "patterns/navigation/nav.css"
         }
@@ -719,6 +799,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "section",
           "namePretty": "Section",
+          "filename": "section",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections/section.html",
           "localPath": "patterns/sections/section.html"
         }
@@ -728,6 +809,7 @@ const patternManifest_1520955372092 = {
         {
           "name": "section",
           "namePretty": "Section",
+          "filename": "section",
           "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/sections/section.css",
           "localPath": "patterns/sections/section.css"
         }
@@ -754,5 +836,5 @@ const patternManifest_1520955372092 = {
   }
 };
 
-patternBotIncludes(patternManifest_1520955372092);
+patternBotIncludes(patternManifest_1523901708669);
 }());
