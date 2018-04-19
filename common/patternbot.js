@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library
- * @version 1523902407544
+ * @version 1524144512130
  */
-const patternManifest_1523902407543 = {
+const patternManifest_1524144512130 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -547,14 +547,6 @@ const patternManifest_1523902407543 = {
       "bodyRaw": "A company that sells antique and revamped pieces of furniture.\n",
       "bodyBasic": "A company that sells antique and revamped pieces of furniture."
     },
-    "icons": [
-      "cart16234",
-      "lightbulb16234",
-      "check16234",
-      "profile16234",
-      "star16234",
-      "truck16234"
-    ],
     "interfaceColours": {
       "primary": 0,
       "opposite": 255
@@ -568,7 +560,7 @@ const patternManifest_1523902407543 = {
       "theme": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/images/icons.svg"
+      "icons": false
     },
     "logos": {
       "sizeLarge": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/images/logo-256.svg",
@@ -703,7 +695,15 @@ const patternManifest_1523902407543 = {
         }
       ],
       "md": [],
-      "css": []
+      "css": [
+        {
+          "name": "footer",
+          "namePretty": "Footer",
+          "filename": "footer",
+          "path": "/Users/Liv/Documents/Graphic Design Program/Year 2/Semester 2/Web Dev/Week 3/ecommerce-pattern-library/patterns/footer/footer.css",
+          "localPath": "patterns/footer/footer.css"
+        }
+      ]
     },
     {
       "name": "forms",
@@ -836,5 +836,5 @@ const patternManifest_1523902407543 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523902407543);
+patternBotIncludes(patternManifest_1524144512130);
 }());

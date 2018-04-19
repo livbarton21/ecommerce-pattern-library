@@ -2,3 +2,12 @@ section {
   background-color: var(--color-neutral);
   min-height: 15rem;
 }
+
+h1 {
+  color: var(--color-accent);
+}
+
+.btn {
+color: #000;
+background-color: var(--color-neutral);
+}
